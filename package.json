@@ -2,7 +2,7 @@
   "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughskennedy.com)",
   "name": "read-bulk",
   "description": "Read a number of files in bulk, asynchronously",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:hughsk/node-read-bulk.git"
@@ -17,5 +17,6 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "0.14.x"
-  }
+  },
+  "homepage": "http://github.com/hughsk/read-bulk"
 }

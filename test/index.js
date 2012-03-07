@@ -68,9 +68,9 @@ suite('read-bulk', function() {
 
 				results.each(function(contents, name) {
 					switch (name) {
-						case 'file01.txt': assert.equal(contents.toString(), 'This is the first file.'); break;
+						case 'file01.txt': assert.equal(contents.toString(), 'This is the first file.');  break;
 						case 'file02.txt': assert.equal(contents.toString(), 'This is the second file.'); break;
-						case 'file03.txt': assert.equal(contents.toString(), 'This is the third file.'); break;
+						case 'file03.txt': assert.equal(contents.toString(), 'This is the third file.');  break;
 						case 'file04.txt': assert.equal(contents.toString(), 'This is the fourth file.'); break;
 					}
 				});
@@ -80,6 +80,17 @@ suite('read-bulk', function() {
 		});
 	});
 	suite('#get', function() {
-		
+		test('Returns the correct contents of each file', function(done) {
+			bulk(files, function(err, results) {
+				assert.ifError(err);
+
+				assert.equal(results.get('file01.txt').toString(), 'This is the first file.');
+				assert.equal(results.get('file02.txt').toString(), 'This is the second file.');
+				assert.equal(results.get('file03.txt').toString(), 'This is the third file.');
+				assert.equal(results.get('file04.txt').toString(), 'This is the fourth file.');
+
+				done();
+			});
+		});
 	});
 });
